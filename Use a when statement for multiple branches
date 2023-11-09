@@ -22,7 +22,7 @@ fun main() {
     }
 }
 
-//Adding an additional condition with the same body
+//Adding an additional condition with the same body using comma
 fun main() {
     val trafficLightColor = "Amber"
 
