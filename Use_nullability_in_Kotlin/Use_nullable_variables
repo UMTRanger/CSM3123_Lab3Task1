@@ -1,0 +1,29 @@
+//Using null in code
+fun main(){
+  val favoriteActor = null
+  println(favoriteActor)
+}
+
+//Reassigning variables with null
+fun main(){
+  var favoriteActor: String = "Sandra Oh"
+  println(favoriteActor)
+}
+
+//Understand non-nullable and nullable variables
+fun main(){
+  var favoriteActor: String? = "Sandra Oh" //Adding ? Operator behind the data type will allow a non-nullable variable to become nullable
+  println(favoriteActor)
+
+  favorite Actor = null
+  println(favoriteActor)
+}
+
+//Changing an non-nullable integer variable to become nullable
+fun main(){
+   	var number: Int? = 10
+    println(number)
+    
+    number = null
+    println(number)
+}
