@@ -1,0 +1,50 @@
+//Error using normal method for nullable variables
+fun main(){
+  var favoriteActor: String? = "Sandra Oh"
+  println(favoriteActor.length) //(.length) operator is used here, there is a possibility that the variable may be null and Kotlin has made "?." operator for nullable variables.
+}
+//This will result in an error.
+
+
+//Using the "?." safe-call operator
+fun main(){
+  var favoriteActor: String? = "Sandra Oh"
+  println(favoriteActor?.length)
+}
+
+
+//Using the "!!" not null-assertion operator
+fun main(){
+  var favoriteActor: String? = "Sandra Oh"
+  println(favoriteActor!!.length)
+}
+
+
+//Using the "!!" operator on null values
+fun main(){
+  var favoriteActor: String? = null
+  println(favoriteActor!!.length)
+}
+//This will result in an error "NullPointerException". Because the "!!" not-null assertion operator means asserting that the value is not null.
+
+
+//Using the if/else conditionals to check for nulls
+fun main(){
+  var favoriteActor: String? = "Sandra Oh"
+  
+  val lengthOfName = if (favoriteActor != null){
+    favoriteActor.length
+  }else{
+    0
+  }
+  println("The number of characters in your favorite actor's name is $lengthOfName.")
+}
+
+//Using "?:" Evlis operator (Printing default value if the ?. returns null)
+fun main(){
+  var favoriteActor: String? = "Sandra Oh"
+
+  val lengthOfName = favoriteActor?.length ?: 0
+
+  println("The number of characters in your favorite actor's name is $lengthOfName.")
+}
