@@ -1,0 +1,22 @@
+class Song(val title: String, val artist: String, val yearPublished: Int, val playCount: Int){
+
+    fun isPopular (){
+
+        if (playCount < 1000){
+           	println("This song is not very popular")
+        }
+        
+        println("This song is well known with over 1000 play counts")
+    }
+    
+    fun printSongDescription(){
+        println("$title, performed by $artist, was released in $yearPublished.")
+    }
+}
+
+fun main(){
+    val s1 = Song("Pefect", "Ed Sheeran", 2017, 350000000)
+    s1.printSongDescription()
+    
+    s1.isPopular()
+}
