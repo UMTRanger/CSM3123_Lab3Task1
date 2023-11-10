@@ -1,0 +1,45 @@
+fun main() {
+    val cupcake: (Int) -> String = {
+        "Have a cupcake!"
+    }
+    
+	val treatFunction = trickOrTreat(false) {"$it quarters"}	//shorhand & trailing lambda syntax
+    val trickFunction = trickOrTreat(true, null)
+    
+    treatFunction()
+    trickFunction()
+    
+    repeat(4){		//using the repeat function
+        
+       	treatFunction()
+        
+    }
+}
+
+fun trickOrTreat(isTrick: Boolean, extraTreat: ((Int) -> String)?): () -> Unit{ //Nullable function type
+    if(isTrick){
+        
+        return trick
+        
+    }else{
+        
+        if(extraTreat != null){
+        	println(extraTreat(5))  
+            
+        }
+        
+        return treat
+    }
+}
+
+val trick = {
+    
+    println("No treats!")
+    
+}
+
+val treat: () -> Unit = {
+    
+    println("Have a treat!")
+    
+}
